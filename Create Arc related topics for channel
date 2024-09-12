@@ -1,0 +1,33 @@
+import random
+
+# List of video topics for your channel
+video_topics = [
+    "Introduction to Architecture: Understanding the Basics",
+    "How to Use Revit for Beginners: Quick Start Guide",
+    "Top 10 Architectural Designs of the 21st Century",
+    "Revit Tips and Tricks: Boost Your Workflow",
+    "How to Design a Building with Sustainability in Mind",
+    "Exploring Famous Buildings and Their Architects",
+    "Architectural Photography: Capturing Buildings Like a Pro",
+    "Revit Advanced Techniques: Parametric Design in Architecture",
+    "The Future of Architecture: Trends and Predictions",
+    "Interview with an Architect: Career Insights and Advice",
+    "Building Information Modeling (BIM) Explained",
+    "How to Pass the Architecture Registration Exam: Study Tips",
+    "Top 5 Revit Plugins You Need to Use",
+    "How to Reduce File Size in Revit: Best Practices",
+    "Common Mistakes to Avoid in Architectural Design",
+    "Step-by-Step Guide to Creating Floor Plans in Revit",
+    "The Importance of In-Place Families in Revit",
+    "What is Parametric Design and How is it Used in Architecture?",
+    "Revit Tutorial: Creating 3D Views for Architectural Presentations",
+    "Exploring the World's Most Sustainable Buildings"
+]
+
+# Function to generate a random video idea
+def generate_video_idea():
+    return random.choice(video_topics)
+
+# Generate and print a random video idea
+for i in range(5):
+    print(f"Video Idea {i + 1}: {generate_video_idea()}")
