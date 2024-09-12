@@ -1,0 +1,60 @@
+import random
+
+# List of video topics for your channel
+video_topics = [
+    "Introduction to Architecture: Understanding the Basics",
+    "How to Use Revit for Beginners: Quick Start Guide",
+    "Top 10 Architectural Designs of the 21st Century",
+    "Revit Tips and Tricks: Boost Your Workflow",
+    "How to Design a Building with Sustainability in Mind",
+    "Exploring Famous Buildings and Their Architects",
+    "Architectural Photography: Capturing Buildings Like a Pro",
+    "Revit Advanced Techniques: Parametric Design in Architecture",
+    "The Future of Architecture: Trends and Predictions",
+    "Interview with an Architect: Career Insights and Advice",
+    "Building Information Modeling (BIM) Explained",
+    "How to Pass the Architecture Registration Exam: Study Tips",
+    "Top 5 Revit Plugins You Need to Use",
+    "How to Reduce File Size in Revit: Best Practices",
+    "Common Mistakes to Avoid in Architectural Design",
+    "Step-by-Step Guide to Creating Floor Plans in Revit",
+    "The Importance of In-Place Families in Revit",
+    "What is Parametric Design and How is it Used in Architecture?",
+    "Revit Tutorial: Creating 3D Views for Architectural Presentations",
+    "Exploring the World's Most Sustainable Buildings"
+]
+
+# Dictionary of hashtags for specific topics
+hashtag_library = {
+    "architecture": ["#architecture", "#architectlife", "#architecturedesign", "#design", "#construction"],
+    "revit": ["#revit", "#bim", "#revitarchitecture", "#autodeskrevit", "#architecturetips"],
+    "photography": ["#architecturephotography", "#designphotography", "#photography", "#art", "#architectureart"],
+    "sustainability": ["#sustainability", "#greenbuilding", "#ecodesign", "#futurearchitecture", "#environment"],
+    "tutorial": ["#tutorial", "#howto", "#learnrevit", "#revitbasics", "#architecturetutorial"],
+    "study": ["#architectexam", "#examstudy", "#studyarchitecture", "#learnarchitecture", "#careerinsights"]
+}
+
+# Function to generate random video idea
+def generate_video_idea():
+    return random.choice(video_topics)
+
+# Function to generate hashtags based on the topic keywords
+def generate_hashtags(topic):
+    hashtags = []
+    
+    # Match hashtags based on topic keywords
+    for key in hashtag_library:
+        if key in topic.lower():
+            hashtags.extend(hashtag_library[key])
+    
+    # Return a random selection of hashtags (up to 5)
+    return random.sample(hashtags, min(5, len(hashtags)))
+
+# Generate video idea and hashtags
+for i in range(5):
+    video_idea = generate_video_idea()
+    print(f"Video Idea {i + 1}: {video_idea}")
+    
+    # Generate and print related hashtags
+    hashtags = generate_hashtags(video_idea)
+    print(f"Suggested Hashtags: {', '.join(hashtags)}\n")
