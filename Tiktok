@@ -1,0 +1,59 @@
+import random
+
+# List of pet video topics for TikTok content
+video_topics = [
+    "Top 5 Funniest Pet Moments in Under 60 Seconds",
+    "Quick Tips: How to Teach Your Dog to Sit in 15 Seconds",
+    "Adorable Cat Reactions to Treats",
+    "Dog Doing Funny Tricks Compilation",
+    "Pet Care 101: Grooming Your Dog at Home",
+    "Puppy vs. Cat: Who Wins the Cuteness Contest?",
+    "Surprising Things Your Pet Loves",
+    "How to Make DIY Pet Toys in Under 30 Seconds",
+    "Funny Pet Reactions to Everyday Objects",
+    "Quick Hacks for Keeping Your Pets Entertained",
+    "Cute Puppies Running in Slow Motion",
+    "A Day in the Life of My Pet",
+    "Dogs Meeting Cats for the First Time: Reactions",
+    "How to Teach Your Dog to Fetch in 30 Seconds",
+    "Best Products for Pet Care: Quick Review",
+    "Unboxing Pet Toys and Seeing My Pet's Reaction",
+    "Funny Pet Voiceovers: What They're Thinking",
+    "How to Play Hide and Seek with Your Pet",
+    "Pets vs. Water: Funny Reactions",
+    "Quick Tips for Keeping Your Pet Healthy and Active"
+]
+
+# TikTok Hashtag library for pet-related content
+hashtag_library = {
+    "dog": ["#dogsoftiktok", "#puppies", "#doglover", "#doglife", "#dogtricks"],
+    "cat": ["#catsoftiktok", "#catlover", "#catsrule", "#felinefun", "#kittylife"],
+    "pet": ["#petsoftiktok", "#petlovers", "#cutepets", "#petmoments", "#funnypets"],
+    "training": ["#pettraining", "#dogtraining", "#trainyourpet", "#quicktips", "#tricktraining"],
+    "funny": ["#funnypets", "#petfails", "#funnydog", "#funnycat", "#viralpet"]
+}
+
+# Function to generate a random TikTok video idea
+def generate_video_idea():
+    return random.choice(video_topics)
+
+# Function to generate TikTok-specific hashtags based on the topic keywords
+def generate_hashtags(topic):
+    hashtags = []
+    
+    # Match hashtags based on keywords in the video topic
+    for key in hashtag_library:
+        if key in topic.lower():
+            hashtags.extend(hashtag_library[key])
+    
+    # Return a random selection of hashtags (up to 4, TikTok-friendly)
+    return random.sample(hashtags, min(4, len(hashtags)))
+
+# Generate video ideas and hashtags for TikTok
+for i in range(5):
+    video_idea = generate_video_idea()
+    print(f"TikTok Video Idea {i + 1}: {video_idea}")
+    
+    # Generate and print related TikTok hashtags
+    hashtags = generate_hashtags(video_idea)
+    print(f"Suggested Hashtags: {', '.join(hashtags)}\n")
