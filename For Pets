@@ -1,0 +1,60 @@
+import random
+
+# List of pet video topics for your channel
+video_topics = [
+    "Top 10 Funniest Pet Moments Caught on Camera",
+    "How to Train Your Dog: Basic Commands Every Pet Should Know",
+    "Cute and Funny Cat Compilation: Adorable Moments",
+    "Best Pet Care Tips: Keeping Your Dog Healthy and Happy",
+    "DIY Dog Toys: How to Make Fun and Safe Toys at Home",
+    "The Ultimate Guide to Puppy Training for Beginners",
+    "How to Care for Your Pet's Health: Essential Tips for Owners",
+    "Top 5 Most Popular Pet Breeds and Their Characteristics",
+    "How to Keep Your Cat Entertained: Interactive Toys and Games",
+    "Funny Dog Reactions: What Happens When You Say Walk?",
+    "Best Pet Products You Need to Try in 2024",
+    "Introducing a New Pet to Your Home: Tips for a Smooth Transition",
+    "Fun Pet Tricks to Teach Your Dog or Cat",
+    "Top 10 Funniest Pet Fails: Cats and Dogs Being Silly",
+    "How to Groom Your Dog at Home: Step-by-Step Guide",
+    "Training Your Cat to Use a Litter Box: Essential Tips",
+    "What Your Dog's Behavior is Really Trying to Tell You",
+    "Pet Nutrition 101: Choosing the Best Food for Your Pet",
+    "How to Make Your Home Pet-Friendly: Tips for New Pet Owners",
+    "Top 10 Cutest Puppies: Compilation of Cuteness Overload"
+]
+
+# Dictionary of hashtags for specific topics
+hashtag_library = {
+    "dog": ["#dog", "#doglover", "#puppy", "#dogtraining", "#doglife"],
+    "cat": ["#cat", "#catlover", "#kitty", "#cats", "#funnycats"],
+    "pet": ["#pets", "#petlover", "#funnypets", "#petvideos", "#cutepets"],
+    "training": ["#dogtraining", "#puppytraining", "#pettraining", "#obedience", "#teachyourpet"],
+    "care": ["#petcare", "#healthypet", "#pethealth", "#vet", "#petnutrition"],
+    "funny": ["#funnypets", "#funnydogs", "#funnycats", "#petfails", "#cuteandfunny"]
+}
+
+# Function to generate random video idea
+def generate_video_idea():
+    return random.choice(video_topics)
+
+# Function to generate hashtags based on the topic keywords
+def generate_hashtags(topic):
+    hashtags = []
+    
+    # Match hashtags based on topic keywords
+    for key in hashtag_library:
+        if key in topic.lower():
+            hashtags.extend(hashtag_library[key])
+    
+    # Return a random selection of hashtags (up to 5)
+    return random.sample(hashtags, min(5, len(hashtags)))
+
+# Generate video idea and hashtags
+for i in range(5):
+    video_idea = generate_video_idea()
+    print(f"Video Idea {i + 1}: {video_idea}")
+    
+    # Generate and print related hashtags
+    hashtags = generate_hashtags(video_idea)
+    print(f"Suggested Hashtags: {', '.join(hashtags)}\n")
